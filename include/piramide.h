@@ -7,6 +7,7 @@ float areaP(float area_base, float area_lateral);
 float volumeP(float area_base, float altura);
 float areaBase(float lado);
 float areaLateral(float lado);
+float alturaDaPiramide(float lado);
 
 
 #endif

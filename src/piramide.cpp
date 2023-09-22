@@ -20,6 +20,11 @@ float areaLateral(float lado) {
     return areaLateralP;
 }
 
+float alturaDaPiramide(float lado){
+   float h = sqrt(pow(lado, 2) - (pow(lado/2.0, 2)));
+   return h;
+}
+
 
 float areaP(float area_base, float area_lateral) {
    float area = area_base + area_lateral;
@@ -27,7 +32,7 @@ float areaP(float area_base, float area_lateral) {
 }
 
 float volumeP(float area_base, float altura) {
-    float volume = (1.0/3.0) * area_base * altura;
+    float volume =  (area_base * altura)/ 3.0;
     return volume;
 }
 
@@ -35,13 +40,12 @@ void piramideAreaVolume(){
 	
 	float area_Base, area_Lateral, altura, lado;
 
-   std::cout << "Altura da pirâmide: ";
-	std::cin >> altura;
    std::cout << "Lado base da pirâmide quadrada: ";
    std::cin >> lado;
 
    area_Base = areaBase(lado);
    area_Lateral = areaLateral(lado);
+   altura = alturaDaPiramide(lado);
 
     float areapiramide = areaP(area_Base, area_Lateral);
    	float volumepiramide = volumeP(area_Base, altura);
